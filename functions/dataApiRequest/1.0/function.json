@@ -20,6 +20,7 @@
     {
       "name": "type",
       "label": "Type",
+      "info": "Defines your query startingpoint is one record or a collection.",
       "meta": {
         "type": "Select",
         "values": [
@@ -34,14 +35,14 @@
     {
       "name": "filter",
       "label": "Filter",
-      "info": "Filter based on Data API filter, see docs for examples",
+      "info": "Filter based on Data API filter with variable options.",
       "meta": {
         "type": "Text",
         "default": ""
       }
     },
     {
-      "info": "Filter variables",
+      "info": "Variables to be used in the filter option.",
       "label": "Variables",
       "meta": {
         "type": "Map"
@@ -51,7 +52,7 @@
     {
       "name": "query",
       "label": "Query",
-      "info": "Query based on Data API query, see docs for examples",
+      "info": "Query based on Data API query.",
       "meta": {
         "type": "MultilineText"
       }
