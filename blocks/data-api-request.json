@@ -1,5 +1,5 @@
 {
   "dependencies": [],
-  "functions": ["dataApiRequest 1.0"],
-  "includes": []
+  "functions": ["dataApiRequest 1.1"],
+  "includes": ["functions/utils"]
 }
