@@ -5,20 +5,25 @@ With this Action function you can define which data (properties, relations and t
 Eventually this step generates a Data API call, so it's necessary to have a basic knowledge about Data API queries (see: https://docs.bettyblocks.com/en/articles/5598057-data-api-queries)
 
 > **Note**
-> This Action function is best used together with steps that can read text since only a single text variable is returned as output.\_
+> This Action function is best used together with steps that can read text since only a single text variable is returned as output.
 
 ## How to use
 
 1.  Select a model based as "startingpoint".
 
 2.  Select a type which defines if you want to retrieve a record (one item), or a collection of records (multiple items).
+
     ![](https://raw.githubusercontent.com/Betty-Services/Data-API-request-step/main/images/type.png)
 
 3.  Define your filter (in Data API/GraphQL syntax) and variables which you want to use based on the selected model. Variables can be exposed with curly braces in the filter option. Make sure to always use spaces in the filter objects itself, else these will conflict with the curly braces.
+
     For example:
+
     ![Filter and variables](https://raw.githubusercontent.com/Betty-Services/Data-API-request-step/main/images/filter_variables.png)
 
-4.  Define your query by starting directly with the (relational) properties of the selected model in step 1. Please make sure to use the Data API name format when querying relations or properties with underscores in the database name (which will result in the database name in camelCase without underscores). Tip: use the Betty Blocks Playground to verify the correct syntax of your query. The URL of the Playground of your app is as follows: https://[APPLICATION_IDENTIFIER].betty.app/api/runtime/[APPLICATION_UUID].
+4.  Define your query by starting directly with the (relational) properties of the selected model in step 1. Please make sure to use the Data API name format when querying relations or properties with underscores in the database name (which will result in the database name in camelCase without underscores).
+
+    > **Tip:** Use the Betty Blocks Playground to verify the correct syntax of your query. The URL of the Playground of your app is as follows: https://[APPLICATION_IDENTIFIER].betty.app/api/runtime/[APPLICATION_UUID].
 
     For example:
 
@@ -39,5 +44,6 @@ Eventually this step generates a Data API call, so it's necessary to have a basi
 
     > **Note**
     > This option is only relevant when querying a collection of records.
+
 
 6.  Choose a variable name for the result which can be used in subsequent steps. As described previously the output is always a text variable. However the output can be parsed to other data types with for example the Liquid or Expression step.
