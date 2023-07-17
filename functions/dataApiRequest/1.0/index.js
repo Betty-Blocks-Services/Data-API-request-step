@@ -1,4 +1,4 @@
-import templayed from "./templayed";
+import templayed from "../../utils/templayed";
 
 const dataApiRequest = async ({
   type,

@@ -1,0 +1,91 @@
+{
+  "description": "Define your own data request in actions for more flexibility.",
+  "label": "Data API Request",
+  "category": "Misc",
+  "icon": {
+    "name": "DataIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "model",
+      "label": "Model",
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "type",
+      "label": "Type",
+      "info": "Defines your query startingpoint is one record or a collection.",
+      "meta": {
+        "type": "Select",
+        "values": [
+          { "label": "Record", "value": "record" },
+          { "label": "Collection", "value": "collection" }
+        ],
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "filter",
+      "label": "Filter",
+      "info": "Filter based on Data API filter with variable options.",
+      "meta": {
+        "type": "Text",
+        "default": ""
+      }
+    },
+    {
+      "info": "Variables to be used in the filter option.",
+      "label": "Variables",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "filterVariables"
+    },
+    {
+      "name": "queryData",
+      "label": "Query data",
+      "info": "Query based on Data API query.",
+      "meta": {
+        "type": "MultilineText"
+      }
+    },
+    {
+      "name": "outputType",
+      "label": "Output type",
+      "info": "Defines your output: either data or the total count (when quering a collection).",
+      "meta": {
+        "type": "Select",
+        "default": "results",
+        "values": [
+          { "label": "Results", "value": "results" },
+          { "label": "Total count", "value": "totalCount" }
+        ],
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
