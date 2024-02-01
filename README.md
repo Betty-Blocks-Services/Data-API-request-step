@@ -21,8 +21,11 @@ Eventually this step generates a Data API call, so it's necessary to have a basi
 
     ![Filter and variables](https://raw.githubusercontent.com/Betty-Services/Data-API-request-step/main/images/filter_variables.png)
 
-4. Optional you can use "Skip" and "Take" when the type is set to "Collection". "Skip" defines how many records are skipped when the query is executed. For example when you have a total of 100 records and skip is set to 10 the first record which is retrieved is the 11th. "Take" defines how many records you want to query with a maximum of 200 records.
-5.  Define your query by starting directly with the (relational) properties of the selected model in step 1. Please make sure to use the Data API name format when querying relations or properties with underscores in the database name (which will result in the database name in camelCase without underscores).
+> **Note**
+> when using the IN filter which needs to have an array as input please make sure to have a stringified array (Text) instead of regular array variable. The expression step can be used to convert an array to Text (or use the Text output option).
+
+5. Optional you can use "Skip" and "Take" when the type is set to "Collection". "Skip" defines how many records are skipped when the query is executed. For example when you have a total of 100 records and skip is set to 10 the first record which is retrieved is the 11th. "Take" defines how many records you want to query with a maximum of 200 records.
+6.  Define your query by starting directly with the (relational) properties of the selected model in step 1. Please make sure to use the Data API name format when querying relations or properties with underscores in the database name (which will result in the database name in camelCase without underscores).
 
     > **Tip:** Use the Betty Blocks Playground to verify the correct syntax of your query. The URL of the Playground of your app is as follows: https://[APPLICATION_IDENTIFIER].betty.app/api/runtime/[APPLICATION_UUID].
 
@@ -41,10 +44,10 @@ Eventually this step generates a Data API call, so it's necessary to have a basi
             name
         }
 
-6.  Define the output type. By default this option is set to query the results body you have defined in step 4, however you are able to get the total count of a certain collection as well. This can be useful when you need to loop through a collection larger than 200 records and/or want to process data in batches.
+7.  Define the output type. By default this option is set to query the results body you have defined in step 4, however you are able to get the total count of a certain collection as well. This can be useful when you need to loop through a collection larger than 200 records and/or want to process data in batches.
 
     > **Note**
     > This option is only relevant when querying a collection of records.
 
 
-7.  Choose a variable name for the result which can be used in subsequent steps. As described previously the output is always a text variable. However the output can be parsed to other data types with for example the Liquid or Expression step.
+8.  Choose a variable name for the result which can be used in subsequent steps. As described previously the output is always a text variable. However the output can be parsed to other data types with for example the Liquid or Expression step.
