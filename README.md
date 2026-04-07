@@ -21,7 +21,7 @@ Eventually this step generates a Data API call, so it's necessary to have a basi
 > **Note**
 > when using the IN filter which needs to have an array as input please make sure to have a stringified array (Text) instead of regular array variable. The expression step can be used to convert an array to Text (or use the Text output option).
 
-5.  Optional you can use "Skip" and "Take" when the type is set to "Collection". "Skip" defines how many records are skipped when the query is executed. For example when you have a total of 100 records and skip is set to 10 the first record which is retrieved is the 11th. "Take" defines how many records you want to query with a maximum of 200 records.
+5.  Optional you can use "Skip" and "Take" when the type is set to "Collection". "Skip" defines how many records are skipped when the query is executed. For example when you have a total of 100 records and skip is set to 10 the first record which is retrieved is the 11th. "Take" defines how many records you want to query with a maximum of 5000 records.
 6.  Define your query by starting directly with the (relational) properties of the selected model in step 1. Please make sure to use the Data API name format when querying relations or properties with underscores in the database name (which will result in the database name in camelCase without underscores).
 
     > **Tip:** Use the Betty Blocks Playground to verify the correct syntax of your query. The URL of the Playground of your app is as follows: https://[APPLICATION_IDENTIFIER].betty.app/api/runtime/[APPLICATION_UUID].
