@@ -66,14 +66,6 @@
       }
     },
     {
-      "name": "sort",
-      "label": "Sort",
-      "info": "Enable sorting on the query results.",
-      "meta": {
-        "type": "Boolean"
-      }
-    },
-    {
       "name": "sortOrder",
       "label": "Sort order",
       "info": "Defines the sort direction.",
@@ -86,15 +78,7 @@
         "values": [
           { "label": "Ascending", "value": "ASC" },
           { "label": "Descending", "value": "DESC" }
-        ],
-        "configuration": {
-          "dependsOn": [
-            {
-              "option": "sort",
-              "action": "CLEAR"
-            }
-          ]
-        }
+        ]
       }
     },
     {
@@ -106,14 +90,6 @@
         "default": "",
         "validations": {
           "required": true
-        },
-        "configuration": {
-          "dependsOn": [
-            {
-              "option": "sort",
-              "action": "CLEAR"
-            }
-          ]
         }
       }
     },

@@ -1,4 +1,4 @@
-import templayed from '../../utils/templayed';
+import templayed from "../../utils/templayed";
 
 const dataApiRequest = async ({
   type,
@@ -7,7 +7,6 @@ const dataApiRequest = async ({
   filterVariables,
   skip,
   take,
-  sort,
   sortOrder,
   sortField,
   model: { name: modelName },
@@ -18,18 +17,20 @@ const dataApiRequest = async ({
     return previousValue;
   }, {});
 
-  const queryName = type === 'record' ? `one${modelName}` : `all${modelName}`;
+  const queryName = type === "record" ? `one${modelName}` : `all${modelName}`;
   const queryBody =
-    type === 'record'
+    type === "record"
       ? queryData
-      : outputType === 'results'
+      : outputType === "results"
         ? `results { ${queryData} }`
-        : 'totalCount';
+        : "totalCount";
 
-  const where = `{ ${templayed(filter || '')(variableMap)} }`;
+  const where = `{ ${templayed(filter || "")(variableMap)} }`;
   const skipInput = skip || 0;
   const takeInput = Math.min(take || 200, 5000);
-  const sortInput = sort ? `, sort: { order: ${sortOrder}, field: ${sortField} }` : '';
+  const sortInput = sortField
+    ? `, sort: { order: ${sortOrder}, field: ${sortField} }`
+    : "";
 
   const query = `
     query {
@@ -46,7 +47,7 @@ const dataApiRequest = async ({
   }
 
   return {
-    result: type === 'record' ? data[queryName] : data[queryName][outputType],
+    result: type === "record" ? data[queryName] : data[queryName][outputType],
   };
 };
 
