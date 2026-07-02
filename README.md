@@ -18,8 +18,12 @@ Eventually this step generates a Data API call, so it's necessary to have a basi
 
     ![Filter and variables](https://raw.githubusercontent.com/Betty-Services/Data-API-request-step/main/images/filter_variables.png)
 
-> **Note**
-> when using the IN filter which needs to have an array as input please make sure to have a stringified array (Text) instead of regular array variable. The expression step can be used to convert an array to Text (or use the Text output option).
+    > **Note**
+    > when using the IN filter which needs to have an array, please make sure to have a fallback or conditional logic in place because the Data API cannot handle an empty array in the filter. Use the Liquid or Expression step to convert the array to a processable value.
+    > * For an array of numbers, the following expression could be used: <br>
+    >   `{{ tag_ids_array.length }} ? "{{ tag_ids_array }}" : [0]`.
+    > * For an array of strings, the following liquid template could be used: <br>
+    >   `{% if tags_array.size > 0 %}{{ tags_array | json }}{% else %}[""]{% endif%}`.
 
 5.  Optional you can use "Skip" and "Take" when the type is set to "Collection". "Skip" defines how many records are skipped when the query is executed. For example when you have a total of 100 records and skip is set to 10 the first record which is retrieved is the 11th. "Take" defines how many records you want to query with a maximum of 5000 records.
 6.  Define your query by starting directly with the (relational) properties of the selected model in step 1. Please make sure to use the Data API name format when querying relations or properties with underscores in the database name (which will result in the database name in camelCase without underscores).
